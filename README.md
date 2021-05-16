@@ -1,3 +1,3 @@
-# Practica final de programación
+# Práctica final de programación
 
 Se trata del TPV de una panaderia

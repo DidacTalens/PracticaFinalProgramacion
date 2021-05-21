@@ -1,6 +1,7 @@
 package Paneles;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +39,9 @@ public class panelProductos {
         for (int i = 0; i < cantidad; i++) {
             boton=new JButton();
             boton.setBounds(x,y,100,100);
+            boton.setPreferredSize(new Dimension(200,200));
             x+=100;
-            icon=new ImageIcon("src/Imagenes/pan"+i+".png");
+            icon=new ImageIcon("src/Imagenes/pan"+i+".jpg");
             boton.setIcon(icon);
             panel.add(this.boton);
             botones.add(boton);

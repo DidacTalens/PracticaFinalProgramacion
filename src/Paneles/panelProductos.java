@@ -8,6 +8,11 @@ public class panelProductos {
     private final JPanel panel= new JPanel();
     private final JFrame frame= new JFrame();
     private JButton boton=new JButton();
+    private Icon icon=new ImageIcon();
+    private String ruta="C:/home/dam/Escritorio/TrabajoFinal/Imagenes/";
+    private ImageIcon imagen;
+    public int x=30;
+    public int y=30;
 
     public panelProductos() {
         /*Damos formato al JFRAME*/
@@ -21,10 +26,7 @@ public class panelProductos {
         JButton boton4=new JButton("Producto4");
 
         /*Añadimos los botones*/
-        panel.add(boton);
-        panel.add(boton2);
-        panel.add(boton3);
-        panel.add(boton4);
+        creacionBotones(5);
 
         frame.add(panel);
 
@@ -35,12 +37,17 @@ public class panelProductos {
         List<JButton> botones=new ArrayList<>();
         for (int i = 0; i < cantidad; i++) {
             boton=new JButton();
+            boton.setBounds(x,y,100,100);
+            x+=100;
+            icon=new ImageIcon("src/Imagenes/pan"+i+".png");
+            boton.setIcon(icon);
             panel.add(this.boton);
+            botones.add(boton);
         }
     }
 
 
     public static void main(String[] args) {
-
+        panelProductos p= new panelProductos();
     }
 }

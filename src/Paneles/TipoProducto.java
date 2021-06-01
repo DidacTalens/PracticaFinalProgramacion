@@ -5,25 +5,53 @@ import java.awt.*;
 
 public class TipoProducto {
     public static void main(String[] args) {
-        FrameTipoProducto frame=new FrameTipoProducto();
+        TipoProducto ventana=new TipoProducto();
     }
-}
+    public TipoProducto(){
+        JFrame frame=new JFrame();
+        JPanel panelPrincipal=new JPanel();
+        JPanel prueba=new JPanel();
+        JPanel prueba2=new JPanel();
 
-class FrameTipoProducto extends JFrame {
-    public FrameTipoProducto(){
-        Toolkit tk= Toolkit.getDefaultToolkit();
+        /*CONFIG DEL FRAME*/
+        Toolkit mipantalla=Toolkit.getDefaultToolkit();
+        Dimension tamanyo=mipantalla.getScreenSize();
 
-        int altura=tk.getScreenSize().width;
-        int anchura=tk.getScreenSize().height;
+        int alturaPantalla=tamanyo.height;
+        int anchoPantalla=tamanyo.width;
 
-        setBounds(altura/4,anchura/4,200,500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+        frame.setBounds(anchoPantalla/4,alturaPantalla/4, anchoPantalla/2, alturaPantalla/2);
+        frame.setTitle("Ventana 1");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+        frame.add(panelPrincipal, BorderLayout.WEST);
+
+        /*CONFIG DEL JPANEL QUE CAMBIA ENTRE PRODUCTOS*/
+        panelPrincipal.setLayout(new GridLayout(4,1));
+        JButton boton=new JButton("Hamburguesa");
+        JButton boton2=new JButton("Patatas");
+
+        JButton btn=new JButton("Ejemplo");
+        JButton btn2=new JButton("Ejemplo2");
+        prueba.add(btn);
+        prueba2.add(btn2);
+
+        boton.addActionListener(e -> {
+            btn.setBackground(Color.ORANGE);
+            frame.add(prueba, BorderLayout.CENTER);
+            prueba.updateUI();
+        });
+        boton2.addActionListener(e -> {
+            btn2.setBackground(Color.GREEN);
+            frame.add(prueba2, BorderLayout.CENTER);
+            prueba2.updateUI();
+        });
+
+        panelPrincipal.add(boton);
+        panelPrincipal.add(boton2);
+
+
     }
-}
 
-class PanelTipoProducto extends JPanel{
-    public PanelTipoProducto(){
-
-    }
 }

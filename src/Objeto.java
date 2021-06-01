@@ -1,12 +1,20 @@
 public class Objeto {
+    protected String tipoProducto;
     protected String nombre;
     protected double precio;
-    protected boolean caducado;
 
-    public Objeto(String nombre, double precio) {
+    public Objeto(String tipoProducto,String nombre, double precio) {
+        this.tipoProducto=tipoProducto;
         this.nombre = nombre;
         this.precio = precio;
-        this.caducado = false;
+    }
+
+    public String getTipoProducto() {
+        return tipoProducto;
+    }
+
+    public void setTipoProducto(String tipoProducto) {
+        this.tipoProducto = tipoProducto;
     }
 
     public String getNombre() {
@@ -23,13 +31,5 @@ public class Objeto {
 
     public void setPrecio(double precio) {
         this.precio = precio;
-    }
-
-    public boolean isCaducado() {
-        return caducado;
-    }
-
-    public void setCaducado(boolean caducado) {
-        this.caducado = caducado;
     }
 }

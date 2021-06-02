@@ -1,17 +1,13 @@
-package Paneles;
-
 import javax.swing.*;
 import java.awt.*;
 
-public class TipoProducto {
+public class PanelTipoProducto {
     public static void main(String[] args) {
-        TipoProducto ventana=new TipoProducto();
+        PanelTipoProducto ventana=new PanelTipoProducto();
     }
-    public TipoProducto(){
+    public PanelTipoProducto(){
         JFrame frame=new JFrame();
         JPanel panelPrincipal=new JPanel();
-        JPanel prueba=new JPanel();
-        JPanel prueba2=new JPanel();
 
         /*CONFIG DEL FRAME*/
         Toolkit mipantalla=Toolkit.getDefaultToolkit();
@@ -31,27 +27,34 @@ public class TipoProducto {
         panelPrincipal.setLayout(new GridLayout(4,1));
         JButton boton=new JButton("Hamburguesa");
         JButton boton2=new JButton("Patatas");
-
-        JButton btn=new JButton("Ejemplo");
-        JButton btn2=new JButton("Ejemplo2");
-        prueba.add(btn);
-        prueba2.add(btn2);
+        JButton boton3=new JButton("Bebidas");
+        JButton boton4=new JButton("Postres");
 
         boton.addActionListener(e -> {
-            btn.setBackground(Color.ORANGE);
-            frame.add(prueba, BorderLayout.CENTER);
-            prueba.updateUI();
+            Hamburguesa h=new Hamburguesa();
+            frame.add(h,BorderLayout.CENTER);
+            h.updateUI();
         });
         boton2.addActionListener(e -> {
-            btn2.setBackground(Color.GREEN);
-            frame.add(prueba2, BorderLayout.CENTER);
-            prueba2.updateUI();
+            Patatas p=new Patatas();
+            frame.add(p,BorderLayout.CENTER);
+            p.updateUI();
+        });
+        boton3.addActionListener(e -> {
+            Bebidas b=new Bebidas();
+            frame.add(b, BorderLayout.CENTER);
+            b.updateUI();
+        });
+        boton4.addActionListener(e -> {
+            Postres postres=new Postres();
+            frame.add(postres, BorderLayout.CENTER);
+            postres.updateUI();
         });
 
         panelPrincipal.add(boton);
         panelPrincipal.add(boton2);
-
-
+        panelPrincipal.add(boton3);
+        panelPrincipal.add(boton4);
     }
 
 }

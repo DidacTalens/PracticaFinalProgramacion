@@ -5,6 +5,7 @@ public class PanelTipoProducto {
     public static void main(String[] args) {
         PanelTipoProducto ventana=new PanelTipoProducto();
     }
+    JPanel panelVacio=new JPanel();
     public PanelTipoProducto(){
         JFrame frame=new JFrame();
         JPanel panelPrincipal=new JPanel();
@@ -22,6 +23,7 @@ public class PanelTipoProducto {
         frame.setVisible(true);
 
         frame.add(panelPrincipal, BorderLayout.WEST);
+        frame.add(panelVacio, BorderLayout.CENTER);
 
         /*CONFIG DEL JPANEL QUE CAMBIA ENTRE PRODUCTOS*/
         panelPrincipal.setLayout(new GridLayout(4,1));
@@ -32,29 +34,47 @@ public class PanelTipoProducto {
 
         boton.addActionListener(e -> {
             Hamburguesa h=new Hamburguesa();
-            frame.add(h,BorderLayout.CENTER);
-            h.updateUI();
+            Patatas p=new Patatas();
+            Bebidas b=new Bebidas();
+            Postres postres=new Postres();
+
+            nuevoPanel(h);
         });
         boton2.addActionListener(e -> {
+            Hamburguesa h=new Hamburguesa();
             Patatas p=new Patatas();
-            frame.add(p,BorderLayout.CENTER);
-            p.updateUI();
+            Bebidas b=new Bebidas();
+            Postres postres=new Postres();
+
+            nuevoPanel(p);
         });
         boton3.addActionListener(e -> {
+            Hamburguesa h=new Hamburguesa();
+            Patatas p=new Patatas();
             Bebidas b=new Bebidas();
-            frame.add(b, BorderLayout.CENTER);
-            b.updateUI();
+            Postres postres=new Postres();
+
+            nuevoPanel(b);
         });
         boton4.addActionListener(e -> {
+            Hamburguesa h=new Hamburguesa();
+            Patatas p=new Patatas();
+            Bebidas b=new Bebidas();
             Postres postres=new Postres();
-            frame.add(postres, BorderLayout.CENTER);
-            postres.updateUI();
+
+            nuevoPanel(postres);
         });
 
         panelPrincipal.add(boton);
         panelPrincipal.add(boton2);
         panelPrincipal.add(boton3);
         panelPrincipal.add(boton4);
+    }
+    public void nuevoPanel(JPanel panelActual){
+        panelVacio.removeAll();
+        panelVacio.add(panelActual);
+        panelVacio.repaint();
+        panelVacio.revalidate();
     }
 
 }

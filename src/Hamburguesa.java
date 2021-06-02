@@ -7,7 +7,7 @@ import java.util.List;
 
 class Hamburguesa extends JPanel {
     public Hamburguesa(){
-        setLayout(new GridLayout(3,2));
+        setLayout(new GridLayout(0,3));
         try {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
             for (String s :lineas) {

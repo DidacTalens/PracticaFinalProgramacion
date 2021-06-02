@@ -7,7 +7,7 @@ import java.util.List;
 
 class Patatas extends JPanel {
     public Patatas(){
-        setLayout(new GridLayout(3,2));
+        setLayout(new GridLayout(0,3));
         try {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
             for (String s :lineas) {
@@ -24,6 +24,8 @@ class Patatas extends JPanel {
 
     public void creacionBotones(String nombre){
         JButton button=new JButton(nombre);
+        button.setMinimumSize(new Dimension(20,20));
+        button.setMaximumSize(new Dimension(150,60));
         add(button);
     }
 }

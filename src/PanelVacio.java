@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class PanelVacio extends JPanel {
     public PanelVacio(){
-        setLayout(new GridLayout(0,3));
+        setLayout(new GridLayout(3,2));
 
     }
 }

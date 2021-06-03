@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 class Hamburguesa extends JPanel {
+    ActionListener insertar=new insertarNumero();
     public Hamburguesa(){
         setLayout(new GridLayout(0,3));
         try {
@@ -22,14 +23,23 @@ class Hamburguesa extends JPanel {
         } catch (IOException e){
             System.out.println("El fichero no existe");
         }
-        ActionListener insertar=new insertarNumero();
     }
 
     public void creacionBotones(String nombre){
         JButton button=new JButton(nombre);
         button.setSize(30,20);
-        button.addActionListener(e -> {
-            try {
+
+        ImageIcon hamborguesa=new ImageIcon("src/Imagenes/hamburguesa-edit.jpg");
+        button.setIcon(new ImageIcon(hamborguesa.getImage()));
+        button.setMargin(new Insets(0,0,0,0));
+        add(button);
+    }
+}
+class insertarNumero implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        /*
+        *             try {
                 List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
                 for (String s :lineas) {
                     String[] campos=s.split(":");
@@ -44,13 +54,7 @@ class Hamburguesa extends JPanel {
             } catch (IOException y){
                 System.out.println("El fichero no existe");
             }
-        });
-        add(button);
-    }
-}
-class insertarNumero implements ActionListener {
-    @Override
-    public void actionPerformed(ActionEvent e) {
+        * */
         PanelTexto panelTexto=new PanelTexto();
         panelTexto.anyadirContenido("Te he escuchado al fin");
     }

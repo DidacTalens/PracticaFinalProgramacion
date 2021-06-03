@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class PanelTexto extends JPanel {
     public static void main(String[] args) {
@@ -31,6 +29,7 @@ public class PanelTexto extends JPanel {
 
         cantidadTotal=new JButton("0");
         cantidadTotal.setEnabled(false);
+
         add(cantidadTotal, BorderLayout.NORTH);
     }
 
@@ -41,7 +40,7 @@ public class PanelTexto extends JPanel {
     }
 
     public void sumarTotal(int numero){
-        int total=0;
+        int total;
         int cantidad=Integer.parseInt(cantidadTotal.getText());
         total=cantidad+numero;
         cantidadTotal.setText(""+total);

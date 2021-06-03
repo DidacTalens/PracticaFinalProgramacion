@@ -38,8 +38,6 @@ public class PanelPrincipal {
         panelGeneral.add(panelIzq, BorderLayout.WEST);
 
         /*PANEL DERECHO*/
-        JPanel panelDer=new JPanel();
-        panelDer.setLayout(new BorderLayout());
         PanelTexto texto=new PanelTexto();
         PanelImprimir imprimir=new PanelImprimir();
 

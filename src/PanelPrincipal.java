@@ -28,21 +28,23 @@ public class PanelPrincipal {
         frame.add(panelGeneral);
 
         /*PANEL IZQUIERDO*/
+        JPanel panelIzq=new JPanel();
         PanelVacio vacio=new PanelVacio();
         PanelTipoProducto tipoProducto=new PanelTipoProducto();
+        panelIzq.setLayout(new BorderLayout());
 
-        panelGeneral.add(tipoProducto, BorderLayout.WEST);
-        panelGeneral.add(vacio, BorderLayout.CENTER);
+        panelIzq.add(tipoProducto, BorderLayout.WEST);
+        panelIzq.add(vacio, BorderLayout.CENTER);
+        panelGeneral.add(panelIzq, BorderLayout.WEST);
 
         /*PANEL DERECHO*/
-        JPanel panelIzquierdo=new JPanel();
-        panelIzquierdo.setLayout(new BorderLayout());
-
+        JPanel panelDer=new JPanel();
+        panelDer.setLayout(new BorderLayout());
         PanelTexto texto=new PanelTexto();
-        panelIzquierdo.add(texto);
+        PanelImprimir imprimir=new PanelImprimir();
 
-        panelGeneral.add(panelIzquierdo, BorderLayout.EAST);
-
+        texto.add(imprimir,BorderLayout.SOUTH);
+        panelGeneral.add(texto, BorderLayout.CENTER);
 
     }
 }

@@ -51,6 +51,7 @@ public class PanelTipoProducto extends JPanel{
 
         add(losBotones,BorderLayout.WEST);
         add(panelVacio, BorderLayout.CENTER);
+
     }
     public void nuevoPanel(JPanel panelActual){
         panelVacio.removeAll();

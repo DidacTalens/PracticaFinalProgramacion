@@ -23,7 +23,6 @@ public class PanelPrincipal {
         frame.setBounds(anchoPantalla / 4, alturaPantalla / 4, anchoPantalla / 2, alturaPantalla / 2);
         frame.setTitle("Ventana 1");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
 
         /*AÑADIENDO LOS PANELES*/
         JPanel panelGeneral = new JPanel();
@@ -47,5 +46,7 @@ public class PanelPrincipal {
         texto.textArea.setText("HOLA MUNDO");
         texto.add(imprimir,BorderLayout.SOUTH);
         panelGeneral.add(texto, BorderLayout.CENTER);
+
+        frame.setVisible(true);
     }
 }

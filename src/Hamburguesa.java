@@ -21,14 +21,14 @@ class Hamburguesa extends JPanel {
                 String[] campos=s.split(":");
                 Producto producto=new Producto(campos[0],campos[1],Integer.parseInt(campos[2]));
                 if (campos[0].equals("hamburguesa")){
-                    creacionBotones(campos[1],campos[2]);
+                    creacionBotones(campos[1],Integer.parseInt(campos[2]));
                 }
             }
         } catch (IOException e){
             System.out.println("El fichero no existe");
         }
     }
-    public void creacionBotones(String nombre, String precio){
+    public void creacionBotones(String nombre, int precio){
         button=new JButton(nombre);
         button.setSize(30,20);
 
@@ -38,6 +38,7 @@ class Hamburguesa extends JPanel {
         add(button);
         button.addActionListener(e -> {
             panelTexto.anyadirContenido(nombre+" : "+precio);
+            panelTexto.sumarTotal(precio);
         });
     }
 

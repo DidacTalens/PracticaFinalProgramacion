@@ -17,7 +17,7 @@ class Patatas extends JPanel {
                 String[] campos=s.split(":");
                 Producto producto=new Producto(campos[0],campos[1],Integer.parseInt(campos[2]));
                 if (campos[0].equals("patatas")){
-                    creacionBotones(campos[1], campos[2]);
+                    creacionBotones(campos[1], Integer.parseInt(campos[2]));
                 }
             }
         } catch (IOException e){
@@ -25,13 +25,14 @@ class Patatas extends JPanel {
         }
     }
 
-    public void creacionBotones(String nombre, String precio){
+    public void creacionBotones(String nombre, int precio){
         JButton button=new JButton(nombre);
         button.setMinimumSize(new Dimension(20,20));
         button.setMaximumSize(new Dimension(150,60));
         add(button);
         button.addActionListener(e -> {
             panelTexto.anyadirContenido(nombre+" : "+precio);
+            panelTexto.sumarTotal(precio);
         });
     }
 }

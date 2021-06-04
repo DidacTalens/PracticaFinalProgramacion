@@ -32,12 +32,6 @@ public class PanelTexto extends JPanel {
         total=cantidad+numero;
         cantidadTotal.setText(""+total);
     }
-    public void nuevoPanel(JPanel panelActual){
-        removeAll();
-        add(panelActual);
-        repaint();
-        revalidate();
-    }
 }
 
 

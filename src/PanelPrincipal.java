@@ -42,7 +42,7 @@ public class PanelPrincipal {
         panelGeneral.add(panelIzq, BorderLayout.WEST);
 
         /*PANEL DERECHO*/
-        PanelImprimir imprimir = new PanelImprimir();
+        PanelImprimir imprimir = new PanelImprimir(texto);
 
         texto.add(imprimir,BorderLayout.SOUTH);
         panelGeneral.add(texto, BorderLayout.CENTER);

@@ -8,9 +8,10 @@ import java.nio.file.Paths;
 import java.util.List;
 
 class Hamburguesa extends JPanel {
-    ActionListener insertar=new insertarNumero();
+
+    JButton button;
     public Hamburguesa(){
-        setLayout(new GridLayout(0,3));
+        setLayout(new GridLayout(0,2));
         try {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
             for (String s :lineas) {
@@ -24,9 +25,8 @@ class Hamburguesa extends JPanel {
             System.out.println("El fichero no existe");
         }
     }
-
     public void creacionBotones(String nombre){
-        JButton button=new JButton(nombre);
+        button=new JButton(nombre);
         button.setSize(30,20);
 
         ImageIcon hamborguesa=new ImageIcon("src/Imagenes/hamburguesa-edit.jpg");
@@ -34,28 +34,5 @@ class Hamburguesa extends JPanel {
         button.setMargin(new Insets(0,0,0,0));
         add(button);
     }
-}
-class insertarNumero implements ActionListener {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        /*
-        *             try {
-                List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
-                for (String s :lineas) {
-                    String[] campos=s.split(":");
-                    Producto producto=new Producto(campos[0],campos[1],Integer.parseInt(campos[2]));
-                    if (campos[1].equals(button.getText())){
-                        PanelTexto texto=new PanelTexto();
-                        texto.sumarTotal(Integer.parseInt(campos[2]));
-                        texto.anyadirContenido("Pulsaste Wacho");
 
-                    }
-                }
-            } catch (IOException y){
-                System.out.println("El fichero no existe");
-            }
-        * */
-        PanelTexto panelTexto=new PanelTexto();
-        panelTexto.anyadirContenido("Te he escuchado al fin");
-    }
 }

@@ -14,7 +14,9 @@ public class PanelTipoProducto extends JPanel{
         frame.add(product);
     }
     PanelVacio panelVacio=new PanelVacio();
+    PanelTexto panelTexto=new PanelTexto();
 
+    Hamburguesa h;
     public PanelTipoProducto(){
         setLayout(new BorderLayout());
         JPanel losBotones=new JPanel();
@@ -41,7 +43,7 @@ public class PanelTipoProducto extends JPanel{
         boton4.setIcon(new ImageIcon(postreses.getImage()));
 
         boton.addActionListener(e -> {
-            Hamburguesa h=new Hamburguesa();
+            h=new Hamburguesa();
 
             nuevoPanel(h);
         });
@@ -65,6 +67,10 @@ public class PanelTipoProducto extends JPanel{
         losBotones.add(boton2);
         losBotones.add(boton3);
         losBotones.add(boton4);
+
+
+
+
 
         add(losBotones, BorderLayout.WEST);
         add(panelVacio, BorderLayout.CENTER);

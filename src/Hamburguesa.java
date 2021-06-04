@@ -10,7 +10,10 @@ import java.util.List;
 class Hamburguesa extends JPanel {
 
     JButton button;
-    public Hamburguesa(){
+    PanelTexto panelTexto;
+
+    public Hamburguesa(PanelTexto panelTexto){
+        this.panelTexto=panelTexto;
         setLayout(new GridLayout(0,2));
         try {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
@@ -18,14 +21,14 @@ class Hamburguesa extends JPanel {
                 String[] campos=s.split(":");
                 Producto producto=new Producto(campos[0],campos[1],Integer.parseInt(campos[2]));
                 if (campos[0].equals("hamburguesa")){
-                    creacionBotones(campos[1]);
+                    creacionBotones(campos[1],campos[2]);
                 }
             }
         } catch (IOException e){
             System.out.println("El fichero no existe");
         }
     }
-    public void creacionBotones(String nombre){
+    public void creacionBotones(String nombre, String precio){
         button=new JButton(nombre);
         button.setSize(30,20);
 
@@ -33,6 +36,9 @@ class Hamburguesa extends JPanel {
         button.setIcon(new ImageIcon(hamborguesa.getImage()));
         button.setMargin(new Insets(0,0,0,0));
         add(button);
+        button.addActionListener(e -> {
+            panelTexto.anyadirContenido(nombre+" : "+precio);
+        });
     }
 
 }

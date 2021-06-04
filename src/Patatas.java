@@ -6,7 +6,10 @@ import java.nio.file.Paths;
 import java.util.List;
 
 class Patatas extends JPanel {
-    public Patatas(){
+    PanelTexto panelTexto;
+
+    public Patatas(PanelTexto panelTexto){
+        this.panelTexto=panelTexto;
         setLayout(new GridLayout(0,3));
         try {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
@@ -14,7 +17,7 @@ class Patatas extends JPanel {
                 String[] campos=s.split(":");
                 Producto producto=new Producto(campos[0],campos[1],Integer.parseInt(campos[2]));
                 if (campos[0].equals("patatas")){
-                    creacionBotones(campos[1]);
+                    creacionBotones(campos[1], campos[2]);
                 }
             }
         } catch (IOException e){
@@ -22,10 +25,13 @@ class Patatas extends JPanel {
         }
     }
 
-    public void creacionBotones(String nombre){
+    public void creacionBotones(String nombre, String precio){
         JButton button=new JButton(nombre);
         button.setMinimumSize(new Dimension(20,20));
         button.setMaximumSize(new Dimension(150,60));
         add(button);
+        button.addActionListener(e -> {
+            panelTexto.anyadirContenido(nombre+" : "+precio);
+        });
     }
 }

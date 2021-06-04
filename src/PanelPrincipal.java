@@ -29,10 +29,12 @@ public class PanelPrincipal {
         panelGeneral.setLayout(new BorderLayout());
         frame.add(panelGeneral);
 
+        PanelTexto texto = new PanelTexto();
+
         /*PANEL IZQUIERDO*/
         JPanel panelIzq = new JPanel();
         PanelVacio vacio = new PanelVacio();
-        PanelTipoProducto tipoProducto = new PanelTipoProducto();
+        PanelTipoProducto tipoProducto = new PanelTipoProducto(texto);
         panelIzq.setLayout(new BorderLayout());
 
         panelIzq.add(tipoProducto, BorderLayout.WEST);
@@ -40,10 +42,8 @@ public class PanelPrincipal {
         panelGeneral.add(panelIzq, BorderLayout.WEST);
 
         /*PANEL DERECHO*/
-        PanelTexto texto = new PanelTexto();
         PanelImprimir imprimir = new PanelImprimir();
 
-        texto.textArea.setText("HOLA MUNDO");
         texto.add(imprimir,BorderLayout.SOUTH);
         panelGeneral.add(texto, BorderLayout.CENTER);
 

@@ -9,15 +9,15 @@ public class PanelTipoProducto extends JPanel{
         frame.setBounds(200,200,500,400);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        PanelTipoProducto product=new PanelTipoProducto();
+        //PanelTipoProducto product=new PanelTipoProducto();
 
-        frame.add(product);
     }
     PanelVacio panelVacio=new PanelVacio();
-    PanelTexto panelTexto=new PanelTexto();
+    PanelTexto panelTexto;
 
     Hamburguesa h;
-    public PanelTipoProducto(){
+    public PanelTipoProducto(PanelTexto panelTexto){
+        this.panelTexto=panelTexto;
         setLayout(new BorderLayout());
         JPanel losBotones=new JPanel();
         losBotones.setLayout(new GridLayout(0,1));
@@ -43,22 +43,22 @@ public class PanelTipoProducto extends JPanel{
         boton4.setIcon(new ImageIcon(postreses.getImage()));
 
         boton.addActionListener(e -> {
-            h=new Hamburguesa();
+            h=new Hamburguesa(panelTexto);
 
             nuevoPanel(h);
         });
         boton2.addActionListener(e -> {
-            Patatas p=new Patatas();
+            Patatas p=new Patatas(panelTexto);
 
             nuevoPanel(p);
         });
         boton3.addActionListener(e -> {
-            Bebidas b=new Bebidas();
+            Bebidas b=new Bebidas(panelTexto);
 
             nuevoPanel(b);
         });
         boton4.addActionListener(e -> {
-            Postres postres=new Postres();
+            Postres postres=new Postres(panelTexto);
 
             nuevoPanel(postres);
         });

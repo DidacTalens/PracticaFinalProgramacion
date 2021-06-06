@@ -1,3 +1,3 @@
 # PracticaFinalProgramacion
 
-TPV de una panaderia
+TPV de un MC Donalds

@@ -32,13 +32,13 @@
                   <component id="c0c00" class="javax.swing.JButton" binding="TodasLasCompras">
                     <constraints/>
                     <properties>
-                      <text value="MostrarCompras"/>
+                      <text value="Button"/>
                     </properties>
                   </component>
                   <component id="c5268" class="javax.swing.JButton" binding="Imprime">
                     <constraints/>
                     <properties>
-                      <text value="Imprimir"/>
+                      <text value="Button"/>
                     </properties>
                   </component>
                 </children>
@@ -72,12 +72,11 @@
                       <gridbag weightx="0.0" weighty="0.0"/>
                     </constraints>
                     <properties>
-                      <foreground color="-16777216"/>
+                      <foreground color="-4934476"/>
                       <hideActionText value="false"/>
                       <horizontalAlignment value="0"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Imagenes/hamburguesa-edit.jpg"/>
-                      <text value=""/>
+                      <text value="Button"/>
                     </properties>
                   </component>
                   <component id="81a3d" class="javax.swing.JButton" binding="patatasButton" default-binding="true">
@@ -88,8 +87,7 @@
                     <properties>
                       <horizontalAlignment value="0"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Imagenes/patatas-edit.jpg"/>
-                      <text value=""/>
+                      <text value="Button"/>
                     </properties>
                   </component>
                   <component id="a1516" class="javax.swing.JButton" binding="button3" default-binding="true">
@@ -98,8 +96,7 @@
                       <gridbag weightx="0.0" weighty="0.0"/>
                     </constraints>
                     <properties>
-                      <icon value="Imagenes/bebidas-edit.png"/>
-                      <text value=""/>
+                      <text value="Button"/>
                     </properties>
                   </component>
                   <component id="cfcda" class="javax.swing.JButton" binding="button4" default-binding="true">
@@ -108,8 +105,7 @@
                       <gridbag weightx="0.0" weighty="0.0"/>
                     </constraints>
                     <properties>
-                      <icon value="Imagenes/postres-edit.jpg"/>
-                      <text value=""/>
+                      <text value="Button"/>
                     </properties>
                   </component>
                 </children>

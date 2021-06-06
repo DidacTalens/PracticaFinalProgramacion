@@ -1,3 +1,5 @@
+import Prueba.ImprimirString;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,6 +16,8 @@ public class PanelImprimir extends JPanel {
         btn1.addActionListener(e -> {
             String mostrar;
             mostrar=panelTexto.textArea.getText();
+            ImprimirString imprimir=new ImprimirString();
+            imprimir.imprimirTicket(mostrar);
             panelTexto.textArea.setText("");
             panelTexto.cantidadTotal.setText("0");
             System.out.println(mostrar);

@@ -9,6 +9,7 @@ bebida:Fanta limón:3
 bebida:Fanta naranja:3
 bebida:Acuarius:2
 bebida:Agua:1
+bebida:Cerveza:5
 patatas:Rizadas:6
 patatas:Premium:8
 patatas:Fritas:7

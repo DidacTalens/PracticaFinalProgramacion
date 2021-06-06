@@ -14,7 +14,7 @@ class Hamburguesa extends JPanel {
 
     public Hamburguesa(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
-        setLayout(new GridLayout(0,2));
+        setLayout(new GridLayout(0,3));
         try {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
             for (String s :lineas) {
@@ -32,8 +32,6 @@ class Hamburguesa extends JPanel {
         button=new JButton(nombre);
         button.setSize(30,20);
 
-        ImageIcon hamborguesa=new ImageIcon("src/Imagenes/hamburguesa-edit.jpg");
-        button.setIcon(new ImageIcon(hamborguesa.getImage()));
         button.setMargin(new Insets(0,0,0,0));
         add(button);
         button.addActionListener(e -> {

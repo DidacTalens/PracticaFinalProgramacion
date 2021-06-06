@@ -11,6 +11,8 @@ public class PanelTexto extends JPanel {
         textArea=new JTextArea();
         scrollPane=new JScrollPane(textArea);
 
+        textArea.setEditable(false);
+
         scrollPane.setSize(500,800);
         add(scrollPane, BorderLayout.CENTER);
 

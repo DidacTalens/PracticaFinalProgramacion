@@ -10,7 +10,8 @@ class Patatas extends JPanel {
 
     public Patatas(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
-        setLayout(new GridLayout(0,3));
+        setLayout(new GridLayout(0,2));
+        setPreferredSize(new Dimension(300,200));
         try {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
             for (String s :lineas) {
@@ -31,7 +32,7 @@ class Patatas extends JPanel {
         button.setMaximumSize(new Dimension(150,60));
         add(button);
         button.addActionListener(e -> {
-            panelTexto.anyadirContenido(nombre+" : "+precio);
+            panelTexto.anyadirContenido(" "+nombre+" : "+precio);
             panelTexto.sumarTotal(precio);
         });
     }

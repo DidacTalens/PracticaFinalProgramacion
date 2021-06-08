@@ -9,7 +9,8 @@ class Bebidas extends JPanel {
     PanelTexto panelTexto;
     public Bebidas(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
-        setLayout(new GridLayout(0,3));
+        setLayout(new GridLayout(0,2));
+        setPreferredSize(new Dimension(300,200));
         try {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
             for (String s :lineas) {
@@ -28,7 +29,7 @@ class Bebidas extends JPanel {
         JButton button=new JButton(nombre);
         add(button);
         button.addActionListener(e -> {
-            panelTexto.anyadirContenido(nombre+" : "+precio);
+            panelTexto.anyadirContenido(" "+nombre+" : "+precio);
             panelTexto.sumarTotal(precio);
         });
     }

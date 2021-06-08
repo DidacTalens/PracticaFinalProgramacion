@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -14,7 +12,8 @@ class Hamburguesa extends JPanel {
 
     public Hamburguesa(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
-        setLayout(new GridLayout(0,3));
+        setLayout(new GridLayout(0,2));
+        setPreferredSize(new Dimension(300,200));
         try {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
             for (String s :lineas) {
@@ -35,7 +34,7 @@ class Hamburguesa extends JPanel {
         button.setMargin(new Insets(0,0,0,0));
         add(button);
         button.addActionListener(e -> {
-            panelTexto.anyadirContenido(nombre+" : "+precio);
+            panelTexto.anyadirContenido(" "+nombre+" : "+precio);
             panelTexto.sumarTotal(precio);
         });
     }

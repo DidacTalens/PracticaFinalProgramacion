@@ -1,11 +1,18 @@
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 
+/**
+ * @author Dídac Talens
+ * @version 1.0
+ */
 public class PanelTipoProducto extends JPanel{
     PanelVacio panelVacio=new PanelVacio();
     PanelTexto panelTexto;
 
+    /**
+     * Panel de texto donde elegimos entre los diferentes tipos de productos
+     * @param panelTexto panel sobre el que se aplican los cambios de texto
+     */
     public PanelTipoProducto(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
         setLayout(new BorderLayout());
@@ -67,6 +74,11 @@ public class PanelTipoProducto extends JPanel{
         add(panelVacio, BorderLayout.CENTER);
 
     }
+
+    /**
+     * Cambia entre los diferentes paneles que se crean
+     * @param panelActual panel en el que queremos implementar
+     */
     public void nuevoPanel(JPanel panelActual){
         panelVacio.removeAll();
         panelVacio.add(panelActual);

@@ -1,11 +1,18 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Dídac Talens
+ * @version 1.0
+ */
 public class PanelPrincipal {
     public static void main(String[] args) {
         PanelPrincipal principal=new PanelPrincipal();
     }
 
+    /**
+     * Panel de ejecución donde se agrupan todos los paneles
+     */
     public PanelPrincipal() {
         JFrame frame = new JFrame();
 

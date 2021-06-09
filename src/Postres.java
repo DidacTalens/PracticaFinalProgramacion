@@ -5,6 +5,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+/**
+ * @author Dídac Talens
+ * @version 1.0
+ */
 class Postres extends JPanel {
     PanelTexto panelTexto;
 

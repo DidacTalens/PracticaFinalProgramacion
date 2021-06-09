@@ -3,11 +3,19 @@ import Prueba.ImprimirString;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Dídac Talens
+ * @version 1.0
+ */
 public class PanelImprimir extends JPanel {
     JButton btn1;
     JButton btn2;
     PanelTexto panelTexto;
 
+    /**
+     * panel con los botones de imprimir y de mostrar ticket
+     * @param panelTexto panel sobre el que se extrae la información
+     */
     public PanelImprimir(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
         setLayout(new FlowLayout());
@@ -33,7 +41,7 @@ public class PanelImprimir extends JPanel {
     }
 
     /**
-     *
+     * muestra el ticket que se ve por pantalla en un mejor formato
      */
     private void mostrarTiquet() {
         String salida="<html><h1>TICKET:</h1>";

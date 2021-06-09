@@ -8,6 +8,10 @@ import java.util.List;
 class Patatas extends JPanel {
     PanelTexto panelTexto;
 
+    /**
+     * Configuración de la ventana cuando pulsamos en las patatas
+     * @param panelTexto panel del que se recoge información y al que se le añade
+     */
     public Patatas(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
         setLayout(new GridLayout(0,2));
@@ -26,6 +30,11 @@ class Patatas extends JPanel {
         }
     }
 
+    /**
+     * Crea los botones de las botellas cuando pulsamos el botón de las patatas
+     * @param nombre nombre del botón a crear
+     * @param precio precio del producto a crear
+     */
     public void creacionBotones(String nombre, int precio){
         JButton button=new JButton(nombre);
         button.setMinimumSize(new Dimension(20,20));

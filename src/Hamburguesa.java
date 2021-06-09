@@ -10,6 +10,10 @@ class Hamburguesa extends JPanel {
     JButton button;
     PanelTexto panelTexto;
 
+    /**
+     * Configuración de la ventana cuando pulsamos en hamburguesas
+     * @param panelTexto panel del que se recoge información y al que se le añade
+     */
     public Hamburguesa(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
         setLayout(new GridLayout(0,2));
@@ -27,6 +31,12 @@ class Hamburguesa extends JPanel {
             System.out.println("El fichero no existe");
         }
     }
+
+    /**
+     * Crea los botones de las botellas cuando pulsamos el botón de las hamburguesa
+     * @param nombre nombre del botón a crear
+     * @param precio precio del producto a crear
+     */
     public void creacionBotones(String nombre, int precio){
         button=new JButton(nombre);
         button.setSize(30,20);

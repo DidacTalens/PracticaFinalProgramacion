@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="TrabajoFinal:jar">
+  <artifact type="jar" name="TrabajoFinal:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/TrabajoFinal_jar</output-path>
     <root id="archive" name="TrabajoFinal.jar">
       <element id="directory" name="META-INF">

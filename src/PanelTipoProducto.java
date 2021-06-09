@@ -3,24 +3,15 @@ import java.awt.*;
 import java.io.File;
 
 public class PanelTipoProducto extends JPanel{
-    public static void main(String[] args) {
-        JFrame frame=new JFrame();
-        frame.setVisible(true);
-        frame.setBounds(200,200,500,400);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-        //PanelTipoProducto product=new PanelTipoProducto();
-
-    }
     PanelVacio panelVacio=new PanelVacio();
     PanelTexto panelTexto;
 
-    Hamburguesa h;
     public PanelTipoProducto(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
         setLayout(new BorderLayout());
         JPanel losBotones=new JPanel();
         losBotones.setLayout(new GridLayout(0,1));
+
         /*CONFIG DEL JPANEL QUE CAMBIA ENTRE PRODUCTOS*/
         JButton boton=new JButton("");
         JButton boton2=new JButton("");
@@ -43,7 +34,7 @@ public class PanelTipoProducto extends JPanel{
         boton4.setIcon(new ImageIcon(postreses.getImage()));
 
         boton.addActionListener(e -> {
-            h=new Hamburguesa(panelTexto);
+            Hamburguesa h=new Hamburguesa(panelTexto);
 
             nuevoPanel(h);
         });

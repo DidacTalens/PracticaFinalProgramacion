@@ -7,6 +7,11 @@ import java.util.List;
 
 class Postres extends JPanel {
     PanelTexto panelTexto;
+
+    /**
+     * Configuración de la ventana cuando pulsamos en los postres
+     * @param panelTexto panel del que se recoge información y al que se le añade
+     */
     public Postres(PanelTexto panelTexto){
         this.panelTexto=panelTexto;
         setLayout(new GridLayout(0,2));
@@ -25,6 +30,11 @@ class Postres extends JPanel {
         }
     }
 
+    /**
+     * Crea los botones de las botellas cuando pulsamos el botón de las patatas
+     * @param nombre nombre del botón a crear
+     * @param precio precio del producto a crear
+     */
     public void creacionBotones(String nombre, int precio){
         JButton button=new JButton(nombre);
         add(button);

@@ -1,5 +1,3 @@
-import Prueba.ImprimirString;
-
 import javax.swing.*;
 import java.awt.*;
 

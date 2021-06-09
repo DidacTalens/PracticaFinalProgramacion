@@ -1,11 +1,16 @@
-package Prueba;
-
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
+/**
+ * @author Dídac Talens
+ * @version 1.0
+ */
 public class ImprimirString {
-    public void imprimirTicket(String s){
+    /**
+     * Muestra una ventana que permite imprimir el ticket
+     * @param s El String que se le pasa para imprimirlo
+     */
+    static void imprimirTicket(String s){
         JTextPane jtp = new JTextPane();
         jtp.setBackground(Color.white);
         jtp.setFont(new Font("Courier New",Font.BOLD,16));

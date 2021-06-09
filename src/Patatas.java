@@ -24,7 +24,12 @@ class Patatas extends JPanel {
             List<String> lineas= Files.readAllLines(Paths.get("productos.csv"));
             for (String s :lineas) {
                 String[] campos=s.split(":");
-                Producto producto=new Producto(campos[0],campos[1],Integer.parseInt(campos[2]));
+                try {
+                    Producto producto = new Producto(campos[0], campos[1], Integer.parseInt(campos[2]));
+                } catch (NumberFormatException e){
+                    JOptionPane.showMessageDialog(null,"El precio de los productos está mal","ERROR", JOptionPane.WARNING_MESSAGE);
+                }
+
                 if (campos[0].equals("patatas")){
                     creacionBotones(campos[1], Integer.parseInt(campos[2]));
                 }
